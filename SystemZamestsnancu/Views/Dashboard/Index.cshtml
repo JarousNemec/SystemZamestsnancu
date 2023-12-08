@@ -1,0 +1,38 @@
+﻿@model List<SystemZamestsnancu.Data.Employee>
+
+<h2>Employees overview</h2>
+
+<table class="table table-dark">
+    <thead>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>City</th>
+    <th>Street</th>
+    <th>Country</th>
+    <th></th>
+    </thead>
+    <tbody>
+    @foreach (var employee in @Model)
+    {
+        <tr>
+            <td>@employee.Name</td>
+            <td>@employee.Surname</td>
+            @if (employee.Address != null)
+            {
+                <td>@employee.Address.City</td>
+                <td>@employee.Address.Street</td>
+                <td>@employee.Address.Country</td>
+                <td><a href="/dashboard/edit?employeeId=@employee.EmployeeId" class="btn btn-info">Edit</a></td>
+            }
+            else
+            {
+                <td>Unauthorized</td>
+                <td>Unauthorized</td>
+                <td>Unauthorized</td>
+                <td></td>
+            }
+            
+        </tr>
+    }
+    </tbody>
+</table>

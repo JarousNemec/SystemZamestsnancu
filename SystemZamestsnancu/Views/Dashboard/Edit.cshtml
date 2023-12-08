@@ -1,0 +1,10 @@
+﻿@using SystemZamestsnancu.Data
+@model SystemZamestsnancu.Data.Employee
+<form asp-controller="Dashboard" asp-action="Edit">
+    @Html.HiddenFor(x=>x.EmployeeId)
+    <input type="text" asp-for="Name" class="form-control" placeholder="Name"/>
+    <input type="text" asp-for="Surname" class="form-control" placeholder="Surname"/>
+    <input type="datetime" asp-for="Birthdate" class="form-control" placeholder="Birthdate"/>
+    <button type="submit">Submit</button>
+</form>
+
